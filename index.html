@@ -20,8 +20,8 @@
         </div>
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
-                <li><a href="#">Discover</a></li>
-                <li><a href="#">Join</a></li>
+                <li><a class="btn-discover">Discover</a></li>
+                <li><a class="btn-join">Join</a></li>
             </ul>
         </div>
     </header>
@@ -34,7 +34,7 @@
                 <p class="py-6 text-justify">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
                     excepturi
                     exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <a href="#" class="btn btn-primary">Join Now</a>
+                <a class="btn-join-home btn btn-primary">Join Now</a>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
     <div class="w-[20vw] h-[20vw] rounded-full bg-circle-blue absolute top-[15vh] left-[30vw]"></div>
     <div class="w-[20vw] h-[20vw] rounded-full bg-circle-blue absolute bottom-0 right-0"></div> -->
 
-    <div class="hero min-h-screen ">
+    <div class="hero min-h-screen" id="discover">
         <div class="hero-content flex-col lg:flex-row-reverse">
             <img src="static/covers.jpg" class="max-w-sm rounded-lg shadow-2xl" />
             <div class=" pr-10">
@@ -71,7 +71,7 @@
         </div>
     </div>
 
-    <div class="hero min-h-screen">
+    <div class="hero min-h-screen" id="join">
         <div class="hero-content flex-col lg:flex-row justify-evenly">
             <div class="text-center lg:text-left lg:pr-52">
                 <h1 class="text-5xl font-bold">Join the <a class="text-6xl font-bold text-pink-600">fun.</a></h1>
@@ -137,7 +137,23 @@
                 </svg></a>
         </div>
     </footer>
+    <script>
+        const scrollToSection = (button, section) => {
+            button.addEventListener('click', () => {
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        };
 
+        const btndiscover = document.querySelector('.btn-discover');
+        const btnjoin = document.querySelector('.btn-join');
+        const btnjoinhome = document.querySelector('.btn-join-home');
+        const discover = document.querySelector('#discover');
+        const join = document.querySelector('#join');
+
+        scrollToSection(btndiscover, discover);
+        scrollToSection(btnjoin, join);
+        scrollToSection(btnjoinhome, join);
+    </script>
 </body>
 
 </html>
